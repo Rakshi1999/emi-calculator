@@ -92,7 +92,7 @@ nav ul li:hover {
 
 .input-container {
   /* outline: 1px solid rgb(65, 64, 64); */
-  margin: 1rem 0rem;
+  margin: 0.5rem 0rem;
   border-radius: 5px;
   padding: 0.6rem;
 }
