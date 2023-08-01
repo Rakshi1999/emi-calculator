@@ -7,12 +7,13 @@ import {
   FcShop,
   FcGraduationCap,
 } from "react-icons/fc";
+import { BsCurrencyRupee } from "react-icons/bs";
 
 import CustomerInput from "./Components/CustomerInput";
 import { useEffect, useMemo, useState } from "react";
 import PieChart from "./Components/PieChart";
 import Navbar from "./Components/Navbar";
-// import { PieChart } from "@mui/icons-material";
+import Amortization from "./Components/Amortization";
 
 function App() {
   const [principal, setPrincipal] = useState(100000);
@@ -79,7 +80,7 @@ function App() {
 
     if (p > 0 && r > 0 && n > 0) {
       const emiAmount = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      setEmi(emiAmount.toFixed(2));
+      setEmi(Math.ceil(emiAmount));
       return emiAmount;
     } else {
       setEmi("");
@@ -90,8 +91,6 @@ function App() {
   let typeOfLoanMemoized = useMemo(() => {
     return typesOfLoan;
   }, []);
-
-  // const costomerInputArray = [{title:"Loan Amount",titleValue}]
 
   return (
     <div className="App">
@@ -128,9 +127,18 @@ function App() {
           <PieChart PA={principal} I={intrest} />
         </div>
       </div>
-      <h2>
-        Emi : <span>{emi}</span>
+      <h2 style={{ position: "relative" }}>
+        Emi : <span>{emi}</span>{" "}
+        <span style={{ position: "absolute", top: "2px" }}>
+          <BsCurrencyRupee />
+        </span>
       </h2>
+      <Amortization
+        tennure={loanTenure}
+        emi={emi}
+        principal={principal}
+        rate={interestRate}
+      />
     </div>
   );
 }

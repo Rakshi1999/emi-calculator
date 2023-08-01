@@ -32,11 +32,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: rgb(190, 230, 234);
 }
 
 .App {
+  margin: 2rem 0rem;
   width: 80vw;
   min-width: 375px;
   /* height: 80vh; */
@@ -197,6 +198,47 @@ nav ul #hamburger-icon {
 
 .select-tag {
   display: none;
+}
+.amortization-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+.year-container {
+  outline: 2px solid black;
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+table {
+  /* outline: 2px solid white; */
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+th {
+  outline: 1px solid black;
+  /* margin-right: 10px; */
+  padding: 1rem;
+  font-weight: 800;
+  /* border-bottom: 0px solid white; */
+}
+
+td {
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid white;
+  border-right: 1px solid white;
+}
+
+tbody td:last-child {
+  /* background-color: #2497e3; */
+  border-right: 0px;
+}
+
+.name-arrow span {
+  margin-left: 2rem;
 }
 
 @media screen and (max-width: 930px) {
