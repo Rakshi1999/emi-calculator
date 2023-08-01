@@ -5,8 +5,7 @@ function CustomerInput({ title, titleValue, value, change, min, max }) {
   return (
     <div className="input-container">
       <div className="title-container">
-        <h3>{title}</h3>
-        <h3>
+        {/* <h3>
           {titleValue === "rupees" ? (
             <BsCurrencyRupee />
           ) : titleValue === "percentage" ? (
@@ -17,15 +16,26 @@ function CustomerInput({ title, titleValue, value, change, min, max }) {
             " "
           )}{" "}
           {value}
-        </h3>
+        </h3> */}
       </div>
-      <input
-        type="range"
-        onChange={(e) => change(e.target.value)}
-        defaultValue={value}
-        min={min}
-        max={max}
-      />
+      <fieldset
+        style={{
+          padding: "0.5rem",
+          borderRadius: "0.4rem",
+          borderColor: "white",
+        }}
+      >
+        <legend style={{ padding: "0.5rem" }}>
+          <h3>{title}</h3>
+        </legend>
+        <input
+          type="number"
+          onChange={(e) => change(e.target.value)}
+          defaultValue={value}
+          min={min}
+          max={max}
+        />
+      </fieldset>
     </div>
   );
 }

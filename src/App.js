@@ -122,17 +122,25 @@ function App() {
             min="3"
             max="10"
           />
+          <CustomerInput
+            title="Emi"
+            titleValue="months"
+            value={emi}
+            change={setEmi}
+            // min="3"
+            // max="10"
+          />
         </div>
         <div className="pie-chart">
           <PieChart PA={principal} I={intrest} />
         </div>
       </div>
-      <h2 style={{ position: "relative" }}>
+      {/* <h2 style={{ position: "relative" }}>
         Emi : <span>{emi}</span>{" "}
         <span style={{ position: "absolute", top: "2px" }}>
           <BsCurrencyRupee />
         </span>
-      </h2>
+      </h2> */}
       <Amortization
         tennure={loanTenure}
         emi={emi}
